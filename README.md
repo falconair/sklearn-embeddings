@@ -16,7 +16,7 @@ pip install sklearn-embeddings
 Here is a simple example of how to use `sklearn-embeddings` with a scikit-learn classifier:
 
 ```python
-from sklearn_embeddings.embeddings import SentenceTransformerEmbedding
+from sklearn_embeddings import SentenceTransformerEmbedding
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import make_pipeline
 
