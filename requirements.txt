@@ -1,3 +1,0 @@
-scikit-learn>=1.6.0
-sentence-transformers>=4.1.0
-pytest>=8.3.0

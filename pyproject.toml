@@ -1,7 +1,3 @@
-[build-system]
-requires = ["setuptools>=42", "wheel"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "sklearn-embeddings"
 version = "0.1.0"
@@ -9,17 +5,27 @@ description = "Sentence-Transformer embeddings for scikit-learn"
 readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
-dependencies = [
-    "scikit-learn>=1.0.0",
-    "sentence-transformers>=2.0.0",
+dependencies = [ # Replaces requirements.txt, use `pip install -e .`
+    "scikit-learn>=1.6.0",
+    "sentence-transformers>=4.1.0"
 ]
 
 [project.optional-dependencies]
-dev = [
-    "pytest>=7.0.0",
+dev = [ # use `pip install -e ".[dev]"` to install dev dependencies
+    "pytest>=8.3.0",
     "black",
     "flake8",
+    "twine",
+    "build",
+    "mypy"
 ]
 
 [tool.pytest.ini_options]
+# pytest
 testpaths = ["tests"]
+
+[build-system]
+# python -m build
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+

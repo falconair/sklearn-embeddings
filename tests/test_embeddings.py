@@ -1,6 +1,6 @@
 # tests/test_embedding.py
 from sklearn.pipeline import Pipeline
-from sklearn_embeddings.embeddings import SentenceTransformerEmbedding
+from src.embeddings import SentenceTransformerEmbedding
 
 def test_embedding_clustering_pipeline():
     """Test that the embedding works in a scikit-learn pipeline."""
