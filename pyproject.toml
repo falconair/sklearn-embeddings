@@ -26,6 +26,7 @@ testpaths = ["tests"]
 
 [build-system]
 # python -m build
+# twine upload dist/*
 requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
 

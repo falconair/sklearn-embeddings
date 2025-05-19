@@ -10,7 +10,7 @@ class SentenceTransformerEmbedding(BaseEstimator, TransformerMixin):
         self.model = SentenceTransformer(self.model_name)
         
     def fit(self, X, y=None):
-        """Nothing to fit, just initialize the model."""
+        """Nothing to fit, just use `transform` to convert documents to embeddings."""
         return self
         
     def transform(self, X):
