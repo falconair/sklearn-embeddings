@@ -1,13 +1,13 @@
 [project]
 name = "sklearn-embeddings"
-version = "0.1.0"
+version = "0.1.1"
 description = "Sentence-Transformer embeddings for scikit-learn"
 readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
 dependencies = [ # Replaces requirements.txt, use `pip install -e .`
-    "scikit-learn>=1.6.0",
-    "sentence-transformers>=4.1.0"
+    "scikit-learn>=1.0.0",
+    "sentence-transformers>=2.0.0"
 ]
 
 [project.optional-dependencies]
