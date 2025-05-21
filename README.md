@@ -27,6 +27,8 @@ labels = [True, False]
 # Create a pipeline with the embedding model and a classifier
 pipeline = make_pipeline(
     SentenceTransformerEmbedding(), 
+    # SentenceTransformerEmbedding('paraphrase-MiniLM-L6-v2'), 
+    # SentenceTransformerEmbedding(SentenceTransformer('paraphrase-MiniLM-L6-v2')), 
     LogisticRegression()
     )
 
