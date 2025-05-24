@@ -16,26 +16,45 @@ pip install sklearn-embeddings
 Here is a simple example of how to use `sklearn-embeddings` with a scikit-learn classifier:
 
 ```python
+import joblib
+
 from sklearn_embeddings import SentenceTransformerEmbedding
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import make_pipeline
 
 # Sample data
-documents = ["This is a sentence.", "This is another sentence."]
-labels = [True, False]
+documents = ["The food was great.", "Not expensive and good service", "Not worth the money", "I've had better"]
+
+# Labels
+is_positive = [True, True, False, False]
 
 # Create a pipeline with the embedding model and a classifier
 pipeline = make_pipeline(
     SentenceTransformerEmbedding(), 
     # SentenceTransformerEmbedding('paraphrase-MiniLM-L6-v2'), 
+    # SentenceTransformerEmbedding('/my/local/folder/paraphrase-MiniLM-L6-v2'), 
     # SentenceTransformerEmbedding(SentenceTransformer('paraphrase-MiniLM-L6-v2')), 
     LogisticRegression()
     )
 
 # Fit the model
-pipeline.fit(documents, labels)
+pipeline.fit(documents, is_positive)
 
 # Make predictions
-predictions = pipeline.predict(["A new sentence to classify."])
+predictions = pipeline.predict(["So delicious!", "Not for me"])
+
+# Write the whole pipeline to disk
+joblib.dump(pipeline, 'model.joblib')
+
 ```
 
+Perhaps the greatest benefit of this library is that it allows you to use Scikit-learn pipelines to combine encoding and labeling in a single function call.
+
+```python
+import joblib
+
+model = joblib.load('model.joblib')
+
+# Use the loaded pipeline as a simple model, it takes care of sentence-transformer encoding for you!
+model.predict(["This is a sentence"])
+```
