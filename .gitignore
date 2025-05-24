@@ -149,6 +149,9 @@ venv.bak/
 # Test models
 models/
 
+# VS Code settings
+.vscode/
+
 # mypy
 .mypy_cache/
 .dmypy.json
