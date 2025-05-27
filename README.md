@@ -58,3 +58,6 @@ model = joblib.load('model.joblib')
 # Use the loaded pipeline as a simple model, it takes care of sentence-transformer encoding for you!
 model.predict(["This is a sentence"])
 ```
+
+### AI statement
+With assistance from Github Copilot, utilizing Claud Sonnet 3.7
